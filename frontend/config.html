@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atlas Financeiro | Mensagens & API</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">AF</div>
+        <div><h1>Atlas Financeiro</h1><p>mensagens & api</p></div>
+      </div>
+      <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="contas.html">Movimentações</a>
+        <a href="investimentos.html">Planejamento</a>
+        <a href="meses.html">Timeline anual</a>
+        <a class="active" href="config.html">Mensagens & API</a>
+      </nav>
+      <div class="sidebar-foot">
+        <strong>Integração elegante</strong>
+        <p>Área de configuração para WhatsApp, prévias de alerta e histórico de envios com visual mais refinado.</p>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="page-header">
+        <div>
+          <h2>Mensagens automáticas e integração</h2>
+          <p>Configure o envio de lembretes, revise prévias e acompanhe logs em uma página mais premium.</p>
+        </div>
+      </header>
+
+      <section class="hero-card">
+        <div class="hero-grid">
+          <div>
+            <div class="panel-intro">Engine de lembretes</div>
+            <h3 style="margin:10px 0 0;font-size:clamp(28px,3.6vw,42px);line-height:1.04;letter-spacing:-.05em;max-width:620px;">Contas próximas do vencimento com mensagens configuráveis e prontas para disparo.</h3>
+            <p style="margin:14px 0 0;color:var(--muted);max-width:620px;">Esta tela centraliza a conexão com a Meta Cloud API, pré-visualização de avisos e histórico de entregas.</p>
+          </div>
+          <div class="hero-side">
+            <div class="mini-stat"><span>Canal</span><strong>WhatsApp</strong></div>
+            <div class="mini-stat"><span>Regra</span><strong>Vence em 2 dias</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="two-columns align-start">
+        <article class="panel">
+          <div class="panel-header">
+            <div>
+              <h3>Configuração Meta Cloud API</h3>
+              <div class="panel-intro">Preencha os dados oficiais para ativar os lembretes automáticos.</div>
+            </div>
+          </div>
+          <form id="formConfig" class="form-grid">
+            <div class="field span-2 checkbox-line">
+              <input type="checkbox" id="whatsappEnabled" />
+              <label for="whatsappEnabled">Ativar envio via WhatsApp</label>
+            </div>
+            <div class="field"><label>Phone Number ID</label><input type="text" id="phoneNumberId" /></div>
+            <div class="field"><label>Versão da API</label><input type="text" id="apiVersion" placeholder="v23.0" /></div>
+            <div class="field span-2"><label>Access Token</label><input type="password" id="accessToken" /></div>
+            <div class="field"><label>Template name</label><input type="text" id="templateName" placeholder="financeiro_vencimento" /></div>
+            <div class="field"><label>Template language</label><input type="text" id="templateLang" placeholder="pt_BR" /></div>
+            <div class="field span-2"><label>Telefone destino</label><input type="text" id="recipientPhone" placeholder="+5547997573257" /></div>
+            <div class="span-2 actions-row">
+              <button class="btn primary" type="submit">Salvar configuração</button>
+              <button class="btn ghost" type="button" id="btnDispararAgora">Disparar lembretes agora</button>
+            </div>
+          </form>
+        </article>
+
+        <article class="panel">
+          <div class="panel-header">
+            <div>
+              <h3>Prévia e histórico</h3>
+              <div class="panel-intro">Veja o que será enviado e acompanhe os retornos da API.</div>
+            </div>
+          </div>
+          <div class="actions-row">
+            <button class="btn ghost" type="button" id="btnPreview">Prévia +2 dias</button>
+            <button class="btn ghost" type="button" id="btnLogs">Atualizar logs</button>
+          </div>
+          <div id="previewArea" class="preview-list"></div>
+          <div id="logsArea" class="preview-list"></div>
+        </article>
+      </section>
+    </main>
+  </div>
+  <script src="js/shared.js"></script>
+  <script src="js/config.js"></script>
+</body>
+</html>

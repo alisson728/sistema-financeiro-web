@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atlas Financeiro | Timeline anual</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">AF</div>
+        <div><h1>Atlas Financeiro</h1><p>timeline anual</p></div>
+      </div>
+      <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="contas.html">Movimentações</a>
+        <a href="investimentos.html">Planejamento</a>
+        <a class="active" href="meses.html">Timeline anual</a>
+        <a href="config.html">Mensagens & API</a>
+      </nav>
+      <div class="sidebar-foot">
+        <strong>Leitura de continuidade</strong>
+        <p>Veja o ano inteiro como uma sequência de cartões com status e pendências em destaque.</p>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="page-header">
+        <div>
+          <h2>Timeline anual do seu dinheiro</h2>
+          <p>Uma forma mais bonita e prática de enxergar o comportamento de cada mês ao longo do ano.</p>
+        </div>
+        <div class="toolbar">
+          <select id="anoFiltro"></select>
+        </div>
+      </header>
+
+      <section id="cardsMeses" class="months-grid months-grid-lg"></section>
+    </main>
+  </div>
+  <script src="js/shared.js"></script>
+  <script src="js/meses.js"></script>
+</body>
+</html>

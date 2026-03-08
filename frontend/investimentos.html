@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atlas Financeiro | Planejamento</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">AF</div>
+        <div><h1>Atlas Financeiro</h1><p>planejamento</p></div>
+      </div>
+      <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="contas.html">Movimentações</a>
+        <a class="active" href="investimentos.html">Planejamento</a>
+        <a href="meses.html">Timeline anual</a>
+        <a href="config.html">Mensagens & API</a>
+      </nav>
+      <div class="sidebar-foot">
+        <strong>Metas com presença visual</strong>
+        <p>Uma página com cara de produto premium, pensada para metas, reservas e evolução projetada.</p>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="page-header">
+        <div>
+          <h2>Planejamento de patrimônio e metas</h2>
+          <p>Monte projeções com mais contexto visual, sem aquele padrão repetitivo das telas antigas.</p>
+        </div>
+      </header>
+
+      <section class="two-columns align-start">
+        <article class="panel">
+          <div class="panel-header">
+            <div>
+              <h3>Nova meta</h3>
+              <div class="panel-intro">Planejamento visual para construção de patrimônio.</div>
+            </div>
+          </div>
+          <form id="formProjecao" class="form-grid">
+            <div class="field span-2">
+              <label>Título</label>
+              <input type="text" id="titulo" required placeholder="Ex.: reserva de emergência, troca de carro, viagem" />
+            </div>
+            <div class="field"><label>Valor meta</label><input type="number" step="0.01" id="valorMeta" required /></div>
+            <div class="field"><label>Aporte mensal</label><input type="number" step="0.01" id="aporteMensal" required /></div>
+            <div class="field"><label>Rentabilidade mensal (%)</label><input type="number" step="0.01" id="rentabilidadeMensal" required /></div>
+            <div class="field"><label>Prazo (meses)</label><input type="number" id="prazoMeses" required /></div>
+            <div class="span-2 actions-row"><button class="btn primary" type="submit">Salvar projeção</button></div>
+          </form>
+        </article>
+
+        <article class="panel">
+          <div class="panel-header">
+            <div>
+              <h3>Leitura da meta principal</h3>
+              <div class="panel-intro">Distribuição visual entre acumulado e faltante.</div>
+            </div>
+          </div>
+          <canvas id="chartMeta"></canvas>
+          <div id="metaResumo" class="projection-summary"></div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header">
+          <div>
+            <h3>Metas cadastradas</h3>
+            <div class="panel-intro">Um catálogo mais elegante para suas projeções.</div>
+          </div>
+        </div>
+        <div id="listaProjecoes" class="cards-list"></div>
+      </section>
+    </main>
+  </div>
+  <script src="js/shared.js"></script>
+  <script src="js/investimentos.js"></script>
+</body>
+</html>
